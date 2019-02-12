@@ -30,11 +30,11 @@ from 'C:\db\spmedgroup_clinica.csv'
 END
 GO
 
-CREATE PROCEDURE INSERIR_CONSULTA
+CREATE PROCEDURE INSERIR_SITUACAO
 AS
 BEGIN
-bulk insert CONSULTA
-from 'C:\db\spmedgroup_consultas.csv'
+bulk insert SITUACOES
+from 'C:\db\spmedgroup_situacoes.csv'
 	with(
 		format = 'csv',
 		firstrow = 2, -- primeira linha de dados = 2 
@@ -46,12 +46,43 @@ from 'C:\db\spmedgroup_consultas.csv'
 END
 GO
 
+CREATE PROCEDURE INSERIR_TIPO_USUARIO
+AS
+BEGIN
+bulk insert TIPOS_USUARIOS
+from 'C:\db\spmedgroup_tipos_usuarios.csv'
+	with(
+		format = 'csv',
+		firstrow = 2, -- primeira linha de dados = 2 
+		fieldterminator = ';', -- separador de campos = ';'
+		rowterminator = '\n', -- separador de linhas = '\n'
+		CODEPAGE = 'ACP', -- codificação dos dados = 'ACP'
+		DATAFILETYPE = 'Char' -- tipo do arquivo = 'Char'
+	);
+END
+GO
 
 CREATE PROCEDURE INSERIR_ESPECIALIDADE
 AS
 BEGIN
 bulk insert ESPECIALIDADES
 from 'C:\db\spmedgroup_especialidades.csv'
+	with(
+		format = 'csv',
+		firstrow = 2, -- primeira linha de dados = 2 
+		fieldterminator = ';', -- separador de campos = ';'
+		rowterminator = '\n', -- separador de linhas = '\n'
+		CODEPAGE = 'ACP', -- codificação dos dados = 'ACP'
+		DATAFILETYPE = 'Char' -- tipo do arquivo = 'Char'
+	);
+END
+GO
+
+CREATE PROCEDURE INSERIR_USUARIOS
+AS
+BEGIN
+bulk insert USUARIOS
+from 'C:\db\spmedgroup_usuarios.csv'
 	with(
 		format = 'csv',
 		firstrow = 2, -- primeira linha de dados = 2 
@@ -98,45 +129,11 @@ END
 GO
 
 
-CREATE PROCEDURE INSERIR_SITUACAO
+CREATE PROCEDURE INSERIR_CONSULTA
 AS
 BEGIN
-bulk insert SITUACOES
-from 'C:\db\spmedgroup_situacoes.csv'
-	with(
-		format = 'csv',
-		firstrow = 2, -- primeira linha de dados = 2 
-		fieldterminator = ';', -- separador de campos = ';'
-		rowterminator = '\n', -- separador de linhas = '\n'
-		CODEPAGE = 'ACP', -- codificação dos dados = 'ACP'
-		DATAFILETYPE = 'Char' -- tipo do arquivo = 'Char'
-	);
-END
-GO
-
-
-CREATE PROCEDURE INSERIR_TIPO_USUARIO
-AS
-BEGIN
-bulk insert TIPOS_USUARIOS
-from 'C:\db\spmedgroup_tipos_usuarios.csv'
-	with(
-		format = 'csv',
-		firstrow = 2, -- primeira linha de dados = 2 
-		fieldterminator = ';', -- separador de campos = ';'
-		rowterminator = '\n', -- separador de linhas = '\n'
-		CODEPAGE = 'ACP', -- codificação dos dados = 'ACP'
-		DATAFILETYPE = 'Char' -- tipo do arquivo = 'Char'
-	);
-END
-GO
-
-
-CREATE PROCEDURE INSERIR_USUARIOS
-AS
-BEGIN
-bulk insert USUARIOS
-from 'C:\db\spmedgroup_usuarios.csv'
+bulk insert CONSULTA
+from 'C:\db\spmedgroup_consultas.csv'
 	with(
 		format = 'csv',
 		firstrow = 2, -- primeira linha de dados = 2 
