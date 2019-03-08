@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Senai.Spmedgroup.WebApi.Domains
+namespace Senai.SpMedGroup.WebApi.Domains
 {
     public partial class Situacoes
     {
         public Situacoes()
         {
-            Consulta = new HashSet<Consulta>();
+            Consultas = new HashSet<Consultas>();
         }
 
         public int Id { get; set; }
         public string Nome { get; set; }
 
-        public ICollection<Consulta> Consulta { get; set; }
+        public ICollection<Consultas> Consultas { get; set; }
     }
 }

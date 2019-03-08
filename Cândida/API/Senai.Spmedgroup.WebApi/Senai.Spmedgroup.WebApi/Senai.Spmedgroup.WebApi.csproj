@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Domains\Enums\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Senai.Spmedgroup.WebApi
+namespace Senai.SpMedGroup.WebApi
 {
     public class Startup
     {
@@ -15,7 +15,6 @@ namespace Senai.Spmedgroup.WebApi
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddMvc()
                 .AddJsonOptions(options =>
                 {
@@ -80,7 +79,6 @@ namespace Senai.Spmedgroup.WebApi
             */
 
             app.UseMvc();
-
         }
     }
 }

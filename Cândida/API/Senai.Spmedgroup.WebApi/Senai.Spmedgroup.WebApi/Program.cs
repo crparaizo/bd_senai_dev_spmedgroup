@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Senai.Spmedgroup.WebApi
+namespace Senai.SpMedGroup.WebApi
 {
     public class Program
     {

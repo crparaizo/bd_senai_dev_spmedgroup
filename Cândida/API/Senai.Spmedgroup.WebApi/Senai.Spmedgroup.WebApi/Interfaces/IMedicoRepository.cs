@@ -1,7 +1,7 @@
-﻿using Senai.Spmedgroup.WebApi.Domains;
+﻿using Senai.SpMedGroup.WebApi.Domains;
 using System.Collections.Generic;
 
-namespace Senai.Spmedgroup.WebApi.Interfaces
+namespace Senai.SpMedGroup.WebApi.Interfaces
 {
     public interface IMedicoRepository
     {

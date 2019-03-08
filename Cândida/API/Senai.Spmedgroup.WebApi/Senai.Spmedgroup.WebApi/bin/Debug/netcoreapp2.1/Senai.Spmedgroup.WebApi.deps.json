@@ -22,7 +22,7 @@
   },
   "targets": {
     ".NETCoreApp,Version=v2.1": {
-      "Senai.Spmedgroup.WebApi/1.0.0": {
+      "Senai.SpMedGroup.WebApi/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "2.1.1",
@@ -35,10 +35,10 @@
           "System.IdentityModel.Tokens.Jwt": "5.4.0"
         },
         "runtime": {
-          "Senai.Spmedgroup.WebApi.dll": {}
+          "Senai.SpMedGroup.WebApi.dll": {}
         },
         "compile": {
-          "Senai.Spmedgroup.WebApi.dll": {}
+          "Senai.SpMedGroup.WebApi.dll": {}
         }
       },
       "Microsoft.AspNetCore.Razor.Design/2.1.2": {},
@@ -3525,7 +3525,7 @@
     }
   },
   "libraries": {
-    "Senai.Spmedgroup.WebApi/1.0.0": {
+    "Senai.SpMedGroup.WebApi/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

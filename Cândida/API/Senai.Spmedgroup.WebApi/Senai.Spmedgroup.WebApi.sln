@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senai.Spmedgroup.WebApi", "Senai.Spmedgroup.WebApi\Senai.Spmedgroup.WebApi.csproj", "{E3F5B83B-95D7-485A-AB4E-E62E4A76056C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Senai.SpMedGroup.WebApi", "Senai.SpMedGroup.WebApi\Senai.SpMedGroup.WebApi.csproj", "{01295082-070C-4E2E-A8F8-9ACF67E45594}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E3F5B83B-95D7-485A-AB4E-E62E4A76056C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E3F5B83B-95D7-485A-AB4E-E62E4A76056C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E3F5B83B-95D7-485A-AB4E-E62E4A76056C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E3F5B83B-95D7-485A-AB4E-E62E4A76056C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01295082-070C-4E2E-A8F8-9ACF67E45594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01295082-070C-4E2E-A8F8-9ACF67E45594}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01295082-070C-4E2E-A8F8-9ACF67E45594}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01295082-070C-4E2E-A8F8-9ACF67E45594}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {65FC674D-DDC7-4F4A-94A2-5901D1F43847}
+		SolutionGuid = {1E4F141D-408E-47D0-905B-40B5118EE5C0}
 	EndGlobalSection
 EndGlobal

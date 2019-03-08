@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Senai.Spmedgroup.WebApi.Domains
+namespace Senai.SpMedGroup.WebApi.Domains
 {
-    public partial class Consulta
+    public partial class Consultas
     {
         public int Id { get; set; }
         public int? IdProntuario { get; set; }

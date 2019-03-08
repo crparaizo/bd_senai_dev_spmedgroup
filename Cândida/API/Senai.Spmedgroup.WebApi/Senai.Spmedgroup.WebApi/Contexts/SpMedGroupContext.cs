@@ -2,21 +2,21 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Senai.Spmedgroup.WebApi.Domains
+namespace Senai.SpMedGroup.WebApi.Domains
 {
-    public partial class MedGroupContext : DbContext
+    public partial class SpMedGroupContext : DbContext
     {
-        public MedGroupContext()
+        public SpMedGroupContext()
         {
         }
 
-        public MedGroupContext(DbContextOptions<MedGroupContext> options)
+        public SpMedGroupContext(DbContextOptions<SpMedGroupContext> options)
             : base(options)
         {
         }
 
-        public virtual DbSet<Clinica> Clinica { get; set; }
-        public virtual DbSet<Consulta> Consulta { get; set; }
+        public virtual DbSet<Clinicas> Clinicas { get; set; }
+        public virtual DbSet<Consultas> Consultas { get; set; }
         public virtual DbSet<Especialidades> Especialidades { get; set; }
         public virtual DbSet<Medicos> Medicos { get; set; }
         public virtual DbSet<Prontuarios> Prontuarios { get; set; }
@@ -35,9 +35,9 @@ namespace Senai.Spmedgroup.WebApi.Domains
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Clinica>(entity =>
+            modelBuilder.Entity<Clinicas>(entity =>
             {
-                entity.ToTable("CLINICA");
+                entity.ToTable("CLINICAS");
 
                 entity.HasIndex(e => e.Cnpj)
                     .HasName("UQ__CLINICA__AA57D6B414C33DBE")
@@ -76,9 +76,9 @@ namespace Senai.Spmedgroup.WebApi.Domains
                     .IsUnicode(false);
             });
 
-            modelBuilder.Entity<Consulta>(entity =>
+            modelBuilder.Entity<Consultas>(entity =>
             {
-                entity.ToTable("CONSULTA");
+                entity.ToTable("CONSULTAS");
 
                 entity.HasIndex(e => new { e.IdMedico, e.DataHoraConsulta })
                     .HasName("HORA_MEDICO")
@@ -102,17 +102,17 @@ namespace Senai.Spmedgroup.WebApi.Domains
                 entity.Property(e => e.IdSituacao).HasColumnName("ID_SITUACAO");
 
                 entity.HasOne(d => d.IdMedicoNavigation)
-                    .WithMany(p => p.Consulta)
+                    .WithMany(p => p.Consultas)
                     .HasForeignKey(d => d.IdMedico)
                     .HasConstraintName("FK__CONSULTA__ID_MED__6477ECF3");
 
                 entity.HasOne(d => d.IdProntuarioNavigation)
-                    .WithMany(p => p.Consulta)
+                    .WithMany(p => p.Consultas)
                     .HasForeignKey(d => d.IdProntuario)
                     .HasConstraintName("FK__CONSULTA__ID_PRO__6383C8BA");
 
                 entity.HasOne(d => d.IdSituacaoNavigation)
-                    .WithMany(p => p.Consulta)
+                    .WithMany(p => p.Consultas)
                     .HasForeignKey(d => d.IdSituacao)
                     .HasConstraintName("FK__CONSULTA__ID_SIT__656C112C");
             });

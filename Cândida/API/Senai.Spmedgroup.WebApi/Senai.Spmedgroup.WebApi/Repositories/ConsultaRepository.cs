@@ -5,48 +5,48 @@ using System.Linq;
 
 namespace Senai.SpMedGroup.WebApi.Repositories
 {
-    public class ProntuarioRepository : IProntuarioRepository
+    public class ConsultaRepository : IConsultaRepository
     {
-        public void Alterar(Prontuarios prontuario)
+        public void Alterar(Consultas consulta)
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                ctx.Prontuarios.Update(prontuario);
+                ctx.Consultas.Update(consulta);
                 ctx.SaveChanges();
             }
         }
 
-        public Prontuarios BuscarPorId(int id)
+        public Consultas BuscarPorId(int id)
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                return ctx.Prontuarios.Find(id);
+                return ctx.Consultas.Find(id);
             }
         }
 
-        public void Cadastrar(Prontuarios prontuario)
+        public void Cadastrar(Consultas consulta)
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                ctx.Prontuarios.Add(prontuario);
+                ctx.Consultas.Add(consulta);
                 ctx.SaveChanges();
             }
         }
 
-        public void Excluir(Prontuarios prontuario)
+        public void Excluir(Consultas consulta)
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                ctx.Prontuarios.Remove(prontuario);
+                ctx.Consultas.Remove(consulta);
                 ctx.SaveChanges();
             }
         }
 
-        public List<Prontuarios> Listar()
+        public List<Consultas> Listar()
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                return ctx.Prontuarios.ToList();
+                return ctx.Consultas.ToList();
             }
         }
     }

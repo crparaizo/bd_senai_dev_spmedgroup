@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Senai.Spmedgroup.WebApi.Domains
+namespace Senai.SpMedGroup.WebApi.Domains
 {
-    public partial class Clinica
+    public partial class Clinicas
     {
-        public Clinica()
+        public Clinicas()
         {
             Medicos = new HashSet<Medicos>();
         }
