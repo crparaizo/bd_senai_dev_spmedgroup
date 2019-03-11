@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Senai.SpMedGroup.WebApi",
+    "\\Senai.SpMedGroup.WebApi\\Contexts",
+    "\\Senai.SpMedGroup.WebApi\\Controllers",
+    "\\Senai.SpMedGroup.WebApi\\Domains",
+    "\\Senai.SpMedGroup.WebApi\\Interfaces"
+  ],
+  "SelectedNode": "\\Senai.SpMedGroup.WebApi\\Controllers\\MedicosController.cs",
+  "PreviewInSolutionExplorer": false
+}

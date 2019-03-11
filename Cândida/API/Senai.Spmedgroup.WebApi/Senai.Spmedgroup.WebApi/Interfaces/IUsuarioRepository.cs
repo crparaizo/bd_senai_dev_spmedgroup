@@ -1,4 +1,5 @@
 ﻿using Senai.SpMedGroup.WebApi.Domains;
+using Senai.SpMedGroup.WebApi.ViewModel;
 using System.Collections.Generic;
 
 namespace Senai.SpMedGroup.WebApi.Interfaces
@@ -10,6 +11,8 @@ namespace Senai.SpMedGroup.WebApi.Interfaces
         void Alterar(Usuarios usuario);
 
         Usuarios BuscarPorId(int id);
+
+        Usuarios BuscarPorEmailSenha(LoginViewModel login);
 
         void Cadastrar(Usuarios usuario);
 

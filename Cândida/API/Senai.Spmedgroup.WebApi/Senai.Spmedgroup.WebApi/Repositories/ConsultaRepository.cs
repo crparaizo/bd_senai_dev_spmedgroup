@@ -37,7 +37,7 @@ namespace Senai.SpMedGroup.WebApi.Repositories
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                ctx.Consultas.Remove(consulta);
+                ctx.Consultas.Update(consulta);
                 ctx.SaveChanges();
             }
         }
@@ -47,6 +47,22 @@ namespace Senai.SpMedGroup.WebApi.Repositories
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
                 return ctx.Consultas.ToList();
+            }
+        }
+
+        public List<Consultas> ListarUmMedico(int id)
+        {
+            using (SpMedGroupContext ctx = new SpMedGroupContext())
+            {
+                return ctx.Consultas.Where(x => x.IdMedico == id).ToList();
+            }
+        }
+
+        public List<Consultas> ListarUmPaciente(int id)
+        {
+            using (SpMedGroupContext ctx = new SpMedGroupContext())
+            {
+                return ctx.Consultas.Where(x => x.IdProntuario == id).ToList();
             }
         }
     }

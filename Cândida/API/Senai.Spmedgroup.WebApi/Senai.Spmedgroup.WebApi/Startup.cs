@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Senai.SpMedGroup.WebApi
 {
@@ -16,11 +17,11 @@ namespace Senai.SpMedGroup.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc()
-                .AddJsonOptions(options =>
-                {
+                .AddJsonOptions(
+                options =>  {
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                     options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
-                }
-                )
+                })
                 .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
 
             /*
@@ -30,6 +31,8 @@ namespace Senai.SpMedGroup.WebApi
             {
                 c.SwaggerDoc("v1", new Info { Title = "Spmedgroup", Version = "v1" });
             });
+
+            */
 
             services.AddAuthentication(options =>
             {
@@ -49,12 +52,11 @@ namespace Senai.SpMedGroup.WebApi
 
                     ClockSkew = TimeSpan.FromMinutes(30),
 
-                    ValidIssuer = "Spmedgroup.Web.Api",
+                    ValidIssuer = "Senai.SpMedGroup.WebApi",
 
-                    ValidAudience = "Spmedgroup.Web.Api"
+                    ValidAudience = "Senai.SpMedGroup.WebApi"
                 };
             });
-            */
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,7 +76,7 @@ namespace Senai.SpMedGroup.WebApi
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Spmedgrup");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "SpMedGroup");
             });
             */
 

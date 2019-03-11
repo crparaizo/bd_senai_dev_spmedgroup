@@ -1,5 +1,7 @@
-﻿using Senai.SpMedGroup.WebApi.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai.SpMedGroup.WebApi.Domains;
 using Senai.SpMedGroup.WebApi.Interfaces;
+using Senai.SpMedGroup.WebApi.ViewModel;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -13,6 +15,14 @@ namespace Senai.SpMedGroup.WebApi.Repositories
             {
                 ctx.Usuarios.Update(usuario);
                 ctx.SaveChanges();
+            }
+        }
+
+        public Usuarios BuscarPorEmailSenha(LoginViewModel login)
+        {
+            using (SpMedGroupContext ctx = new SpMedGroupContext())
+            {
+                return ctx.Usuarios.Include(x => x.IdTipoUsuarioNavigation).FirstOrDefault(x => x.Email == login.Email && x.Senha == login.Senha);
             }
         }
 

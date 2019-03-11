@@ -9,6 +9,8 @@ namespace Senai.SpMedGroup.WebApi.Interfaces
 
         void Alterar(Especialidades especialidade);
 
+        Especialidades BuscarPorId(int id);
+
         void Cadastrar(Especialidades especialidade);
 
         void Excluir(Especialidades especialidade);

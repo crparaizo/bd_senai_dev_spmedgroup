@@ -16,6 +16,14 @@ namespace Senai.SpMedGroup.WebApi.Repositories
             }
         }
 
+        public Especialidades BuscarPorId(int id)
+        {
+            using (SpMedGroupContext ctx = new SpMedGroupContext())
+            {
+                return ctx.Especialidades.Find(id);
+            }
+        }
+
         public void Cadastrar(Especialidades especialidade)
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
