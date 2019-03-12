@@ -18,11 +18,14 @@ namespace Senai.SpMedGroup.WebApi.Repositories
             }
         }
 
-        public Usuarios BuscarPorEmailSenha(LoginViewModel login)
+        public Usuarios BuscarPorEmailSenha(string email, string senha)
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                return ctx.Usuarios.Include(x => x.IdTipoUsuarioNavigation).FirstOrDefault(x => x.Email == login.Email && x.Senha == login.Senha);
+                Usuarios usuario = ctx.Usuarios.Where(x => x.Email == email && x.Senha == senha).FirstOrDefault();
+                //return ctx.Usuarios.Include(x => x.IdTipoUsuarioNavigation).FirstOrDefault(x => x.Email == email && x.Senha == senha);
+
+                return usuario;
             }
         }
 

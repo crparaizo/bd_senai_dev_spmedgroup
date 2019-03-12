@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Senai.SpMedGroup.WebApi.Domains;
 using Senai.SpMedGroup.WebApi.Interfaces;
@@ -19,7 +20,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             UsuarioRepository = new UsuarioRepository();
         }
 
-
+        [Authorize(Roles = "1")]
         [HttpGet]
         public IActionResult Get()
         {
@@ -36,6 +37,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             }
         }
 
+        [Authorize(Roles = "1,3")]
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(int id)
         {
@@ -49,6 +51,8 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             return Ok(usuarioProcurado);
         }
 
+
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Usuarios usuario)
         {
@@ -63,6 +67,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpPut]
         public IActionResult Alterar(Usuarios usuario)
         {
@@ -85,6 +90,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             }
         }
 
+        [Authorize(Roles = "1")]
         [HttpDelete("{id}")]
         public IActionResult Excluir(int id)
         {

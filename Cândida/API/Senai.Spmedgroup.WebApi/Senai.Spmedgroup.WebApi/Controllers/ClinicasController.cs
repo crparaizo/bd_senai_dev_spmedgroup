@@ -1,24 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.SpMedGroup.WebApi.Domains;
 using Senai.SpMedGroup.WebApi.Interfaces;
 using Senai.SpMedGroup.WebApi.Repositories;
-using System;
-using System.Linq;
 
-namespace Senai.Spmedgroup.WebApi.Controllers
+namespace Senai.SpMedGroup.WebApi.Controllers
 {
-    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-
-    public class MedicosController : ControllerBase
+    public class ClinicasController : ControllerBase
     {
-        private IMedicoRepository MedicoRepository { get; set; }
+        private IClinicaRepository ClinicaRepository { get; set; }
 
-        public MedicosController()
+        public ClinicasController()
         {
-            MedicoRepository = new MedicoRepository();
+            ClinicaRepository = new ClinicaRepository();
         }
 
         [Authorize]
@@ -27,10 +28,25 @@ namespace Senai.Spmedgroup.WebApi.Controllers
         {
             try
             {
-                using (SpMedGroupContext ctx = new SpMedGroupContext())
+                using (SpMedGroupContext ctx = new SpMedGroupContext ())
                 {
-                    return Ok(ctx.Medicos.ToList());
+                    return Ok(ctx.Clinicas.ToList());
                 }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensagem = ex.Message + "ERROOO" });
+            }
+        }
+
+        [Authorize(Roles = "1")]
+        [HttpPost]
+        public IActionResult Post (Clinicas clinica)
+        {
+            try
+            {
+                ClinicaRepository.Cadastrar(clinica);
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -42,45 +58,30 @@ namespace Senai.Spmedgroup.WebApi.Controllers
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(int id)
         {
-            Medicos medicoProcurado = MedicoRepository.BuscarPorId(id);
+            Clinicas clinicaProcurada = ClinicaRepository.BuscarPorId(id);
 
-            if (medicoProcurado == null)
+            if (clinicaProcurada == null)
             {
                 return NotFound();
             }
 
-            return Ok(medicoProcurado);
-        }
-
-        [Authorize(Roles = "1")]
-        [HttpPost]
-        public IActionResult Cadastrar(Medicos medico)
-        {
-            try
-            {
-                MedicoRepository.Cadastrar(medico);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { mensagem = ex.Message + " ERROOO" });
-            }
+            return Ok(clinicaProcurada);
         }
 
         [Authorize(Roles = "1")]
         [HttpPut]
-        public IActionResult Alterar(Medicos medico)
+        public IActionResult Alterar(Clinicas clinica)
         {
             try
             {
-                Medicos medicoProcurado = MedicoRepository.BuscarPorId(medico.Id);
+                Clinicas clinicaProcurada = ClinicaRepository.BuscarPorId(clinica.Id);
 
-                if (medicoProcurado == null)
+                if (clinicaProcurada == null)
                 {
-                    
+                    return NotFound();
                 }
 
-                MedicoRepository.Alterar(medico);
+                ClinicaRepository.Alterar(clinica);
 
                 return Ok();
             }
@@ -96,14 +97,14 @@ namespace Senai.Spmedgroup.WebApi.Controllers
         {
             try
             {
-                Medicos medicoProcurado = MedicoRepository.BuscarPorId(id);
+                Clinicas clinicaProcurada = ClinicaRepository.BuscarPorId(id);
 
-                if (medicoProcurado == null)
+                if (clinicaProcurada == null)
                 {
                     return NotFound();
                 }
 
-                MedicoRepository.Excluir(medicoProcurado);
+                ClinicaRepository.Excluir(clinicaProcurada);
 
                 return Ok();
             }

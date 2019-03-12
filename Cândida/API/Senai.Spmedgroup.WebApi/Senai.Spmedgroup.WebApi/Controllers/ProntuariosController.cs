@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Senai.SpMedGroup.WebApi.Domains;
 using Senai.SpMedGroup.WebApi.Interfaces;
@@ -19,6 +20,7 @@ namespace Senai.SpMedGroup.WebApi.Controllers
             ProntuarioRepository = new ProntuarioRepository();
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult Get()
         {
@@ -35,6 +37,7 @@ namespace Senai.SpMedGroup.WebApi.Controllers
             }
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public IActionResult BuscarPorId (int id)
         {
@@ -48,6 +51,7 @@ namespace Senai.SpMedGroup.WebApi.Controllers
             return Ok(prontuarioProcurado);
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Cadastrar (Prontuarios prontuario)
         {
@@ -62,6 +66,7 @@ namespace Senai.SpMedGroup.WebApi.Controllers
             }
         }
 
+        [Authorize]
         [HttpPut]
         public IActionResult Alterar (Prontuarios prontuario)
         {
@@ -84,6 +89,7 @@ namespace Senai.SpMedGroup.WebApi.Controllers
             }
         }
 
+        [Authorize]
         [HttpDelete ("{id}")]
         public IActionResult Excluir (int id)
         {

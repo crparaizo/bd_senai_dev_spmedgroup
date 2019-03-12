@@ -12,7 +12,7 @@ namespace Senai.SpMedGroup.WebApi.Interfaces
 
         Usuarios BuscarPorId(int id);
 
-        Usuarios BuscarPorEmailSenha(LoginViewModel login);
+        Usuarios BuscarPorEmailSenha(string email, string senha);
 
         void Cadastrar(Usuarios usuario);
 

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using Senai.SpMedGroup.WebApi.Domains;
@@ -14,9 +10,9 @@ using Senai.SpMedGroup.WebApi.ViewModel;
 
 namespace Senai.SpMedGroup.WebApi.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
     [Produces("application/json")]
+    [Route("api/[controller]")]
+    [ApiController]
     public class LoginController : ControllerBase
     {
         private IUsuarioRepository UsuarioRepository { get; set; }
@@ -27,18 +23,15 @@ namespace Senai.SpMedGroup.WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Logar(LoginViewModel login)
+        public IActionResult Post(LoginViewModel login)
         {
+                Usuarios usuarioProcurado = UsuarioRepository.BuscarPorEmailSenha(login.Email, login.Senha);
             try
             {
-                Usuarios usuarioProcurado = UsuarioRepository.BuscarPorEmailSenha(login);
 
                 if (usuarioProcurado == null)
                 {
-                    return NotFound(new
-                    {
-                        mensagem = "Usuário não encontrado, e-mail ou senha incorretos."
-                    });
+                    return NotFound();
                 }
 
                 var claims = new[]
@@ -53,8 +46,8 @@ namespace Senai.SpMedGroup.WebApi.Controllers
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
                 var token = new JwtSecurityToken(
-                    issuer: "Senai.SpMedGroup.WebApi",
-                    audience: "Senai.SpMedGroup.WebApi",
+                    issuer: "SpMedGroup.Web.Api",
+                    audience: "SpMedGroup.Web.Api",
                     claims: claims,
                     expires: DateTime.Now.AddMinutes(30),
                     signingCredentials: creds
@@ -65,11 +58,11 @@ namespace Senai.SpMedGroup.WebApi.Controllers
                     token = new JwtSecurityTokenHandler().WriteToken(token)
                 });
             }
-            catch (Exception ex)
+            catch
             {
                 return BadRequest(new
                 {
-                    mensagem = "Erro: " + ex
+                    mensagem = "Erro: "
                 });
             }
         }
