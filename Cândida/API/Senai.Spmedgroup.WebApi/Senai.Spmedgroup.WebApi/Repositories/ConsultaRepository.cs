@@ -42,6 +42,7 @@ namespace Senai.SpMedGroup.WebApi.Repositories
             }
         }
 
+        /*
         public List<Consultas> Listar()
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
@@ -49,8 +50,36 @@ namespace Senai.SpMedGroup.WebApi.Repositories
                 return ctx.Consultas.ToList();
             }
         }
+        */
 
-        public List<Consultas> ListarUmMedico(int id)
+        public List<Consultas> Listar(int IdUser, int IdUserType)
+        {
+            using (SpMedGroupContext ctx = new SpMedGroupContext ())
+            {
+                if (IdUserType == 1)
+                {
+                    return ctx.Consultas.ToList();
+                }
+
+                if (IdUserType == 3)
+                {
+                    Medicos medico;
+                    medico = ctx.Medicos.FirstOrDefault(x => x.IdUsuario == IdUser);
+                    return ctx.Consultas.Where(x => x.IdMedico == medico.Id).ToList();
+                }
+
+                if (IdUserType == 2)
+                {
+                    Prontuarios prontuario;
+                    prontuario = ctx.Prontuarios.Where(x => x.Id == IdUser).FirstOrDefault();
+                    return ctx.Consultas.Where(x => x.IdProntuario == prontuario.Id).ToList();
+                }
+
+                return null;
+            }
+        }
+
+        public List<Consultas> ListarUmMedico(int id) //Listar todas as consultas de um médico pelo ID na URL
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
@@ -58,7 +87,7 @@ namespace Senai.SpMedGroup.WebApi.Repositories
             }
         }
 
-        public List<Consultas> ListarUmPaciente(int id)
+        public List<Consultas> ListarUmPaciente(int id) //Listar todas as consultas de um paciente pelo ID na URL
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {

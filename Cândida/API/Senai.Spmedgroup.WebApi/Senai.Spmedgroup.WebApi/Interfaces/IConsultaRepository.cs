@@ -5,7 +5,7 @@ namespace Senai.SpMedGroup.WebApi.Interfaces
 {
     public interface IConsultaRepository
     {
-        List<Consultas> Listar();
+        List<Consultas> Listar(int IdUser, int IdUserType);
 
         List<Consultas> ListarUmPaciente(int id);
 
@@ -18,5 +18,7 @@ namespace Senai.SpMedGroup.WebApi.Interfaces
         void Cadastrar(Consultas consulta);
 
         void Excluir(Consultas consulta);
+
+        //List<Consultas> ListarConsultasEspecificas(int IdUser, int IdUserType);
     }
 }

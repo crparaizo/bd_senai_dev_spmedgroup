@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Senai.SpMedGroup.WebApi.Domains
 {
@@ -11,6 +12,7 @@ namespace Senai.SpMedGroup.WebApi.Domains
         }
 
         public int Id { get; set; }
+        [Required(ErrorMessage = "Informe o id do usuário!")]
         public int? IdUsuario { get; set; }
         public string Rg { get; set; }
         public string Cpf { get; set; }

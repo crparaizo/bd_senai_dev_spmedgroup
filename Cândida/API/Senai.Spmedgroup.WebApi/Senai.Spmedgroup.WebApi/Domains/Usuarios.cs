@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Senai.SpMedGroup.WebApi.Domains
 {
@@ -15,6 +16,7 @@ namespace Senai.SpMedGroup.WebApi.Domains
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
+        [Required(ErrorMessage = "Informe o id do tipo de usuário!")]
         public int? IdTipoUsuario { get; set; }
 
         public TiposUsuarios IdTipoUsuarioNavigation { get; set; }

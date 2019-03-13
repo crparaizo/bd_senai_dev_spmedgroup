@@ -4,7 +4,9 @@ using Senai.SpMedGroup.WebApi.Domains;
 using Senai.SpMedGroup.WebApi.Interfaces;
 using Senai.SpMedGroup.WebApi.Repositories;
 using System;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 
 namespace Senai.Spmedgroup.WebApi.Controllers
 {
@@ -20,6 +22,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             ConsultaRepository = new ConsultaRepository();
         }
 
+        /*
         [Authorize]
         [HttpGet]
         public IActionResult Get()
@@ -36,6 +39,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
                 return BadRequest(new { mensagem = ex.Message + "ERROOO" });
             }
         }
+        */
 
         [Authorize]
         [HttpGet("{id}")]
@@ -140,6 +144,23 @@ namespace Senai.Spmedgroup.WebApi.Controllers
                 ConsultaRepository.Excluir(consulta);
 
                 return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensagem = ex.Message + "ERROOO" });
+            }
+        }
+
+        [Authorize]
+        [HttpGet]
+        public IActionResult Get()
+        {
+            try
+            {
+                int IdUser = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                int IdTypeUser = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == ClaimTypes.Role).Value);
+
+                return Ok(ConsultaRepository.Listar(IdUser, IdTypeUser));
             }
             catch (Exception ex)
             {
