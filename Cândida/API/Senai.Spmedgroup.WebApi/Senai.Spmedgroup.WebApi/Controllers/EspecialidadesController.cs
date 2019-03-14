@@ -36,7 +36,21 @@ namespace Senai.Spmedgroup.WebApi.Controllers
                 return BadRequest(new { mensagem = ex.Message + "ERROOO" });
             }
         }
-        
+
+        [Authorize]
+        [HttpGet("{id}")]
+        public IActionResult BuscarPorId(int id)
+        {
+            Especialidades especialidadeProcurada = EspecialidadeRepository.BuscarPorId(id);
+
+            if (especialidadeProcurada == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(especialidadeProcurada);
+        }
+
         [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Especialidades especialidade)

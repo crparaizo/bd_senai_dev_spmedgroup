@@ -41,7 +41,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
         }
         */
 
-        [Authorize]
+        [Authorize(Roles = "1")]
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(int id)
         {

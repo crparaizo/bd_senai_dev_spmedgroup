@@ -2812,6 +2812,24 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "NSwag.AspNet.Owin.ActionFramework/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net461/NSwag.AspNet.Owin.ActionFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net461/NSwag.AspNet.Owin.ActionFramework.dll": {}
+        }
+      },
+      "NSwag.CodeGeneration.ActionFramework/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net461/NSwag.CodeGeneration.ActionFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net461/NSwag.CodeGeneration.ActionFramework.dll": {}
+        }
+      },
       "NuGet.Frameworks/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -3052,6 +3070,20 @@
           }
         }
       },
+      "Swashbuckle.AspNetCore/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "4.0.1",
+          "Swashbuckle.AspNetCore.SwaggerGen": "4.0.1",
+          "Swashbuckle.AspNetCore.SwaggerUI": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Swashbuckle.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Swashbuckle.AspNetCore.dll": {}
+        }
+      },
       "Swashbuckle.AspNetCore.Swagger/4.0.1": {
         "type": "package",
         "dependencies": {
@@ -3063,6 +3095,36 @@
         },
         "runtime": {
           "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.ApiExplorer": "2.0.0",
+          "Microsoft.AspNetCore.Mvc.Core": "2.0.0",
+          "Microsoft.AspNetCore.Mvc.DataAnnotations": "2.0.0",
+          "Swashbuckle.AspNetCore.Swagger": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {}
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Routing": "2.0.0",
+          "Microsoft.AspNetCore.StaticFiles": "2.0.0",
+          "Microsoft.Extensions.FileProviders.Embedded": "2.0.0",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -7821,6 +7883,32 @@
         "newtonsoft.json.bson.nuspec"
       ]
     },
+    "NSwag.AspNet.Owin.ActionFramework/1.0.1": {
+      "sha512": "YxWyT7DaqWPTUrhBXW8Q1m9X/mxXCtlysR9cWbQi5A3wWS18KDFMLgQKHXBv/ojyHygsHhedKdt5P+54kimU7g==",
+      "type": "package",
+      "path": "nswag.aspnet.owin.actionframework/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.txt",
+        "lib/net461/NSwag.AspNet.Owin.ActionFramework.dll",
+        "nswag.aspnet.owin.actionframework.1.0.1.nupkg.sha512",
+        "nswag.aspnet.owin.actionframework.nuspec"
+      ]
+    },
+    "NSwag.CodeGeneration.ActionFramework/1.0.0": {
+      "sha512": "jMUOq+32BZ9z32OOPxXy586CW7pfr6JTsb9zCjFDjNjUKeOffXlNFS35XMUknMXQoW7W+XP67+RDapJAv3s6TA==",
+      "type": "package",
+      "path": "nswag.codegeneration.actionframework/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Readme.txt",
+        "lib/net461/NSwag.CodeGeneration.ActionFramework.dll",
+        "nswag.codegeneration.actionframework.1.0.0.nupkg.sha512",
+        "nswag.codegeneration.actionframework.nuspec"
+      ]
+    },
     "NuGet.Frameworks/4.7.0": {
       "sha512": "KuqDbPzjOWbUM6gPMbkvdhlQ10roQAoMM7mNZ8hcY/fH+9J4Zc+qT8dLWoNzGyr0OrxQVdZdbSjy/fxwoICgGg==",
       "type": "package",
@@ -8126,6 +8214,18 @@
         "version.txt"
       ]
     },
+    "Swashbuckle.AspNetCore/4.0.1": {
+      "sha512": "k8TzWTpjwO+4xXsMaaAsAPAdYKyM5wuRvSP+ZmgtyXwhW45ChBVq3xdVJ8Tz+hQ0ziBZSh5p6r2dkRN6SyasVA==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.dll",
+        "swashbuckle.aspnetcore.4.0.1.nupkg.sha512",
+        "swashbuckle.aspnetcore.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore.Swagger/4.0.1": {
       "sha512": "2+dXBiOvwjNmkMkBOqGU9ShBJXQp6+UN/Kxfk3HLxwsof9zzgRZ+3rOdjHQuYiY7t1Nl7wlCgn9HbmJyZGhdaQ==",
       "type": "package",
@@ -8137,6 +8237,32 @@
         "lib/netstandard2.0/Swashbuckle.AspNetCore.Swagger.xml",
         "swashbuckle.aspnetcore.swagger.4.0.1.nupkg.sha512",
         "swashbuckle.aspnetcore.swagger.nuspec"
+      ]
+    },
+    "Swashbuckle.AspNetCore.SwaggerGen/4.0.1": {
+      "sha512": "opm/wgG8u987ZuAUtL1E8XrJig+UbGYbFmz8VnA8Vn3AqZyQZy4k243X9egz1iWl/B6sNcgMlFyv3wkdmjJX6g==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.swaggergen/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.dll",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerGen.xml",
+        "swashbuckle.aspnetcore.swaggergen.4.0.1.nupkg.sha512",
+        "swashbuckle.aspnetcore.swaggergen.nuspec"
+      ]
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/4.0.1": {
+      "sha512": "EjPeIYSMLr5FrY4sVJiWrzIQe07Hriv8tOztJa7US88im/tO+tX70y7OJ2Cr8QYojc7IotjZSH1lD8j44DLnrQ==",
+      "type": "package",
+      "path": "swashbuckle.aspnetcore.swaggerui/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.dll",
+        "lib/netstandard2.0/Swashbuckle.AspNetCore.SwaggerUI.xml",
+        "swashbuckle.aspnetcore.swaggerui.4.0.1.nupkg.sha512",
+        "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
     },
     "System.AppContext/4.3.0": {
@@ -12681,6 +12807,9 @@
       "Microsoft.EntityFrameworkCore.Tools >= 2.1.1",
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.1",
+      "NSwag.AspNet.Owin.ActionFramework >= 1.0.1",
+      "NSwag.CodeGeneration.ActionFramework >= 1.0.0",
+      "Swashbuckle.AspNetCore >= 4.0.1",
       "Swashbuckle.AspNetCore.Swagger >= 4.0.1",
       "System.IdentityModel.Tokens.Jwt >= 5.4.0"
     ]
@@ -12764,6 +12893,18 @@
             "target": "Package",
             "version": "[2.1.1, )"
           },
+          "NSwag.AspNet.Owin.ActionFramework": {
+            "target": "Package",
+            "version": "[1.0.1, )"
+          },
+          "NSwag.CodeGeneration.ActionFramework": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "Swashbuckle.AspNetCore": {
+            "target": "Package",
+            "version": "[4.0.1, )"
+          },
           "Swashbuckle.AspNetCore.Swagger": {
             "target": "Package",
             "version": "[4.0.1, )"
@@ -12780,5 +12921,27 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'NSwag.AspNet.Owin.ActionFramework 1.0.1' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.1'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "NSwag.AspNet.Owin.ActionFramework",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "O pacote 'NSwag.CodeGeneration.ActionFramework 1.0.0' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.1'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
+      "libraryId": "NSwag.CodeGeneration.ActionFramework",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    }
+  ]
 }

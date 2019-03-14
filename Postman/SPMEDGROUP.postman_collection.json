@@ -1,0 +1,847 @@
+{
+	"variables": [],
+	"info": {
+		"name": "SPMEDGROUP",
+		"_postman_id": "a71db9f9-d1c5-8212-7f98-e31cc37e4167",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Prontuarios",
+			"description": "",
+			"item": [
+				{
+					"name": "Listar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/prontuarios",
+							"request": {
+								"url": "http://localhost:5000/api/prontuarios",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "BuscarPorId",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/prontuarios/3",
+							"request": {
+								"url": "http://localhost:5000/api/prontuarios/3",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:5000/api/prontuarios/4",
+							"request": {
+								"url": "http://localhost:5000/api/prontuarios/4",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Alterar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/prontuarios",
+							"request": {
+								"url": "http://localhost:5000/api/prontuarios",
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 4,\n    \"idUsuario\": 7,\n    \"rg\": \"123456789\",\n    \"cpf\": \"14332654765\",\n    \"dataNascimento\": \"1985-10-13T00:00:00\",\n    \"telefone\": \"11 4002-8922\",\n    \"endereco\": \"R. Algum Lugar, 120 - Vila Sao Jorge, Barueri - SP, 06402-030\",\n    \"consultas\": []\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Cadastrar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/prontuarios",
+							"request": {
+								"url": "http://localhost:5000/api/prontuarios",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"idUsuario\": 8,\n    \"rg\": \"987654321\",\n    \"cpf\": \"98765786345\",\n    \"dataNascimento\": \"2000-08-24T00:00:00\",\n    \"telefone\": \"11 2308-6288\",\n    \"endereco\": \"R. Que rua é essa?, 120 - Vila Sao Jorge, Barueri - SP, 06402-030\",\n    \"consultas\": []\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:5000/api/prontuarios",
+							"request": {
+								"url": "http://localhost:5000/api/prontuarios",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"idUsuario\": 11,\n    \"rg\": \"555555555\",\n    \"cpf\": \"43765601896\",\n    \"dataNascimento\": \"1965-10-13T00:00:00\",\n    \"telefone\": \"11 4002-8922\",\n    \"endereco\": \"R. HEY HEY, 120 - Vila da Vila, Varuaqui - SP, 06402-030\"\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Deletar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/prontuarios/10",
+							"request": {
+								"url": "http://localhost:5000/api/prontuarios/10",
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Medicos",
+			"description": "",
+			"item": [
+				{
+					"name": "Listar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/medicos",
+							"request": {
+								"url": "http://localhost:5000/api/medicos",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Deletar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/medicos/4",
+							"request": {
+								"url": "http://localhost:5000/api/medicos/4",
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Cadastrar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/medicos",
+							"request": {
+								"url": "http://localhost:5000/api/medicos",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"idUsuario\": 4,\n        \"crm\": \"11111-SP\",\n        \"idEspecialidade\": 4,\n        \"idClinica\": 1,\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Alterar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/medicos",
+							"request": {
+								"url": "http://localhost:5000/api/medicos",
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 4,\n        \"idUsuario\": 4,\n        \"crm\": \"22222-SP\",\n        \"idEspecialidade\": 4,\n        \"idClinica\": 1,\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "BuscarPorId",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/medicos/3",
+							"request": {
+								"url": "http://localhost:5000/api/medicos/3",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Consultas",
+			"description": "",
+			"item": [
+				{
+					"name": "Listar",
+					"description": "",
+					"item": [
+						{
+							"name": "Médico",
+							"description": "",
+							"item": [
+								{
+									"name": "http://localhost:5000/api/consultas",
+									"request": {
+										"url": "http://localhost:5000/api/consultas",
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvYmVydG8ucG9zc2FybGVAc3BtZWRpY2FsZ3JvdXAuY29tLmJyIiwianRpIjoiMiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjMiLCJleHAiOjE1NTI1OTQyODEsImlzcyI6IlNwTWVkR3JvdXAuV2ViLkFwaSIsImF1ZCI6IlNwTWVkR3JvdXAuV2ViLkFwaSJ9.UrOwLC0z3CibM8FRtwhLtCljd5CQ2VZHchPsI8GSd-8",
+												"description": ""
+											}
+										],
+										"body": {},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Paciente",
+							"description": "",
+							"item": [
+								{
+									"name": "http://localhost:5000/api/consultas",
+									"request": {
+										"url": "http://localhost:5000/api/consultas",
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxpZ2lhQGdtYWlsLmNvbSIsImp0aSI6IjQiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIyIiwiZXhwIjoxNTUyNTkzOTk3LCJpc3MiOiJTcE1lZEdyb3VwLldlYi5BcGkiLCJhdWQiOiJTcE1lZEdyb3VwLldlYi5BcGkifQ.1QkR9bWAbqbNvq_U61rrK2jF3KUW4tRZBTF4LdT_CXU",
+												"description": ""
+											}
+										],
+										"body": {},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Administrador",
+							"description": "",
+							"item": [
+								{
+									"name": "http://localhost:5000/api/consultas",
+									"request": {
+										"url": "http://localhost:5000/api/consultas",
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImp0aSI6IjExIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjU5NDA4OSwiaXNzIjoiU3BNZWRHcm91cC5XZWIuQXBpIiwiYXVkIjoiU3BNZWRHcm91cC5XZWIuQXBpIn0.Dka9Ud5AOU0tREzKXTW68GWhbSykxBDsyHWBdsdRG8w",
+												"description": ""
+											}
+										],
+										"body": {},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "http://localhost:5000/api/consultas",
+							"request": {
+								"url": "http://localhost:5000/api/consultas",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "BuscarPorId",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/consultas/3",
+							"request": {
+								"url": "http://localhost:5000/api/consultas/3",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Alterar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/consultas",
+							"request": {
+								"url": "http://localhost:5000/api/consultas",
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 10,\n        \"idProntuario\": 1,\n        \"idMedico\": 1,\n        \"dataHoraConsulta\": \"2022-01-20T15:00:00\",\n        \"idSituacao\": 1\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Cadastrar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/consultas",
+							"request": {
+								"url": "http://localhost:5000/api/consultas",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"idProntuario\": 1,\n        \"idMedico\": 2,\n        \"dataHoraConsulta\": \"2020-01-20T15:00:00\",\n        \"idSituacao\": 3\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Deletar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/consultas/excluir",
+							"request": {
+								"url": "http://localhost:5000/api/consultas/excluir",
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImp0aSI6IjExIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjU5NDYwMywiaXNzIjoiU3BNZWRHcm91cC5XZWIuQXBpIiwiYXVkIjoiU3BNZWRHcm91cC5XZWIuQXBpIn0.D02awuGDJg4BwBfyiuQSH02guYoAm8FaojPHOLXAAHw",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 10,\n        \"idProntuario\": 1,\n        \"idMedico\": 1,\n        \"dataHoraConsulta\": \"2022-01-20T15:00:00\",\n        \"idSituacao\": 3\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Clinicas",
+			"description": "",
+			"item": [
+				{
+					"name": "Listar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/clinicas",
+							"request": {
+								"url": "http://localhost:5000/api/clinicas",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Alterar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/clinicas",
+							"request": {
+								"url": "http://localhost:5000/api/clinicas",
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": 2,\n        \"nomeFantasia\": \"Será que é minha clínica mesmo?\",\n        \"horarioFuncionamento\": \"7h - 19h\",\n        \"cnpj\": \"12357358383   \",\n        \"razaoSocial\": \"SP Medical Group\",\n        \"endereco\": \"Logo ali, 532, São Paulo, SP\"\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Cadastrar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/clinicas",
+							"request": {
+								"url": "http://localhost:5000/api/clinicas",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nomeFantasia\": \"Minha Clínica\",\n        \"horarioFuncionamento\": \"7h - 19h\",\n        \"cnpj\": \"12357358383\",\n        \"razaoSocial\": \"SP Medical Group\",\n        \"endereco\": \"Logo ali, 532, São Paulo, SP\"\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Deletar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/clinicas/2",
+							"request": {
+								"url": "http://localhost:5000/api/clinicas/2",
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "BuscarPorId",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/clinicas/2",
+							"request": {
+								"url": "http://localhost:5000/api/clinicas/2",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"description": "",
+			"item": [
+				{
+					"name": "Listar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/usuarios",
+							"request": {
+								"url": "http://localhost:5000/api/usuarios",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Deletar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/usuarios/12",
+							"request": {
+								"url": "http://localhost:5000/api/usuarios/12",
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Cadastrar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/usuarios",
+							"request": {
+								"url": "http://localhost:5000/api/usuarios",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nome\": \"Jonh Joe\",\n        \"email\": \"jonh@spmedicalgroup.com.br\",\n        \"senha\": \"1234\",\n        \"idTipoUsuario\": 1\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Alterar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/usuarios",
+							"request": {
+								"url": "http://localhost:5000/api/usuarios",
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"id\": \"12\",\n\t\"nome\": \"Jonh Jonass\",\n        \"email\": \"jonh@spmedicalgroup.com.br\",\n        \"senha\": \"1234\",\n        \"idTipoUsuario\": 2\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "BuscarPorId",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/usuarios/5",
+							"request": {
+								"url": "http://localhost:5000/api/usuarios/5",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Especialidades",
+			"description": "",
+			"item": [
+				{
+					"name": "Listar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/especialidades",
+							"request": {
+								"url": "http://localhost:5000/api/especialidades",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Deletar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/especialidades/18",
+							"request": {
+								"url": "http://localhost:5000/api/especialidades/18",
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Cadastrar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/especialidades",
+							"request": {
+								"url": "http://localhost:5000/api/especialidades",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"nome\": \"Legista\"\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Alterar",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/especialidades",
+							"request": {
+								"url": "http://localhost:5000/api/especialidades",
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t \"id\": 13,\n        \"nome\": \"Derma\",\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "BuscarPorId",
+					"description": "",
+					"item": [
+						{
+							"name": "http://localhost:5000/api/especialidades/4",
+							"request": {
+								"url": "http://localhost:5000/api/especialidades/4",
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:5000/api/login",
+					"request": {
+						"url": "http://localhost:5000/api/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"ligia@gmail.com\",\n\t\"senha\": \"1234\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
