@@ -39,7 +39,7 @@ namespace Senai.SpMedGroup.WebApi.Controllers
             }
         }
 
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public IActionResult Post (Clinicas clinica)
         {
@@ -68,7 +68,7 @@ namespace Senai.SpMedGroup.WebApi.Controllers
             return Ok(clinicaProcurada);
         }
 
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpPut]
         public IActionResult Alterar(Clinicas clinica)
         {
@@ -91,7 +91,7 @@ namespace Senai.SpMedGroup.WebApi.Controllers
             }
         }
 
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpDelete("{id}")]
         public IActionResult Excluir(int id)
         {

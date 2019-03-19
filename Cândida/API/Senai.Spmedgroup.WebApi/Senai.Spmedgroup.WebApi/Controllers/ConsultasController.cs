@@ -41,7 +41,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
         }
         */
 
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(int id)
         {
@@ -85,7 +85,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             }
         }
 
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public IActionResult Cadastrar(Consultas consulta)
         {
@@ -104,7 +104,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             }
         }
 
-        [Authorize(Roles = "1,3")]
+        [Authorize(Roles = "Administrador, Medico")]
         [HttpPut]
         public IActionResult Alterar(Consultas consulta)
         {
@@ -127,7 +127,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             }
         }
 
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpPut]
         [Route("excluir")]
         public IActionResult Excluir(Consultas consulta)

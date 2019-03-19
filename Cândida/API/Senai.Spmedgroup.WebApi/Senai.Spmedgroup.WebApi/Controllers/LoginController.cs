@@ -38,7 +38,8 @@ namespace Senai.SpMedGroup.WebApi.Controllers
                 {
                     new Claim(JwtRegisteredClaimNames.Email, usuarioProcurado.Email),
                     new Claim(JwtRegisteredClaimNames.Jti, usuarioProcurado.Id.ToString()),
-                    new Claim(ClaimTypes.Role, usuarioProcurado.IdTipoUsuario.ToString())
+                    new Claim(ClaimTypes.Role, usuarioProcurado.IdTipoUsuarioNavigation.Nome)
+                    // new Claim(ClaimTypes.Role, usuarioProcurado.IdTipoUsuario.ToString())
                 };
 
                 var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("spmedgroup-chave-autenticacao"));

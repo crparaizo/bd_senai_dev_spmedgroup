@@ -22,7 +22,7 @@ namespace Senai.SpMedGroup.WebApi.Repositories
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                Usuarios usuario = ctx.Usuarios.Where(x => x.Email == email && x.Senha == senha).FirstOrDefault();
+                Usuarios usuario = ctx.Usuarios.Include(x => x.IdTipoUsuarioNavigation).Where(x => x.Email == email && x.Senha == senha).FirstOrDefault();
                 //return ctx.Usuarios.Include(x => x.IdTipoUsuarioNavigation).FirstOrDefault(x => x.Email == email && x.Senha == senha);
 
                 return usuario;

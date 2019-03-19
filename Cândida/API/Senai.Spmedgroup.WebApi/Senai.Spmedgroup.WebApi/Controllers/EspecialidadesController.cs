@@ -51,7 +51,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             return Ok(especialidadeProcurada);
         }
 
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public IActionResult Cadastrar(Especialidades especialidade)
         {
@@ -66,7 +66,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             }
         }
 
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpPut]
         public IActionResult Alterar(Especialidades especialidade)
         {
@@ -89,7 +89,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             }
         }
 
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpDelete("{id}")]
         public IActionResult Excluir(int id)
         {

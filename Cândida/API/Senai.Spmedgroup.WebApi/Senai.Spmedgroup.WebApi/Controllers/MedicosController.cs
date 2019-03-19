@@ -52,7 +52,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             return Ok(medicoProcurado);
         }
 
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public IActionResult Cadastrar(Medicos medico)
         {
@@ -67,7 +67,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             }
         }
 
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpPut]
         public IActionResult Alterar(Medicos medico)
         {
@@ -90,7 +90,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             }
         }
 
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "Administrador")]
         [HttpDelete("{id}")]
         public IActionResult Excluir(int id)
         {
