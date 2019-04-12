@@ -1,0 +1,14 @@
+C:\Users\43765601896\Downloads\Senai_Sprint_1_BD\SPMEDGROUP\Cândida\API\Senai.SpMedGroup.WebApi\Senai.SpMedGroup.WebApi\bin\Release\netcoreapp2.1\Senai.SpMedGroup.WebApi.deps.json
+C:\Users\43765601896\Downloads\Senai_Sprint_1_BD\SPMEDGROUP\Cândida\API\Senai.SpMedGroup.WebApi\Senai.SpMedGroup.WebApi\bin\Release\netcoreapp2.1\Senai.SpMedGroup.WebApi.runtimeconfig.json
+C:\Users\43765601896\Downloads\Senai_Sprint_1_BD\SPMEDGROUP\Cândida\API\Senai.SpMedGroup.WebApi\Senai.SpMedGroup.WebApi\bin\Release\netcoreapp2.1\Senai.SpMedGroup.WebApi.runtimeconfig.dev.json
+C:\Users\43765601896\Downloads\Senai_Sprint_1_BD\SPMEDGROUP\Cândida\API\Senai.SpMedGroup.WebApi\Senai.SpMedGroup.WebApi\bin\Release\netcoreapp2.1\Senai.SpMedGroup.WebApi.dll
+C:\Users\43765601896\Downloads\Senai_Sprint_1_BD\SPMEDGROUP\Cândida\API\Senai.SpMedGroup.WebApi\Senai.SpMedGroup.WebApi\bin\Release\netcoreapp2.1\Senai.SpMedGroup.WebApi.pdb
+C:\Users\43765601896\Downloads\Senai_Sprint_1_BD\SPMEDGROUP\Cândida\API\Senai.SpMedGroup.WebApi\Senai.SpMedGroup.WebApi\obj\Release\netcoreapp2.1\Senai.SpMedGroup.WebApi.csprojAssemblyReference.cache
+C:\Users\43765601896\Downloads\Senai_Sprint_1_BD\SPMEDGROUP\Cândida\API\Senai.SpMedGroup.WebApi\Senai.SpMedGroup.WebApi\obj\Release\netcoreapp2.1\Senai.SpMedGroup.WebApi.csproj.CoreCompileInputs.cache
+C:\Users\43765601896\Downloads\Senai_Sprint_1_BD\SPMEDGROUP\Cândida\API\Senai.SpMedGroup.WebApi\Senai.SpMedGroup.WebApi\obj\Release\netcoreapp2.1\Senai.SpMedGroup.WebApi.RazorAssemblyInfo.cache
+C:\Users\43765601896\Downloads\Senai_Sprint_1_BD\SPMEDGROUP\Cândida\API\Senai.SpMedGroup.WebApi\Senai.SpMedGroup.WebApi\obj\Release\netcoreapp2.1\Senai.SpMedGroup.WebApi.RazorAssemblyInfo.cs
+C:\Users\43765601896\Downloads\Senai_Sprint_1_BD\SPMEDGROUP\Cândida\API\Senai.SpMedGroup.WebApi\Senai.SpMedGroup.WebApi\obj\Release\netcoreapp2.1\Senai.SpMedGroup.WebApi.AssemblyInfoInputs.cache
+C:\Users\43765601896\Downloads\Senai_Sprint_1_BD\SPMEDGROUP\Cândida\API\Senai.SpMedGroup.WebApi\Senai.SpMedGroup.WebApi\obj\Release\netcoreapp2.1\Senai.SpMedGroup.WebApi.AssemblyInfo.cs
+C:\Users\43765601896\Downloads\Senai_Sprint_1_BD\SPMEDGROUP\Cândida\API\Senai.SpMedGroup.WebApi\Senai.SpMedGroup.WebApi\obj\Release\netcoreapp2.1\Senai.SpMedGroup.WebApi.RazorTargetAssemblyInfo.cache
+C:\Users\43765601896\Downloads\Senai_Sprint_1_BD\SPMEDGROUP\Cândida\API\Senai.SpMedGroup.WebApi\Senai.SpMedGroup.WebApi\obj\Release\netcoreapp2.1\Senai.SpMedGroup.WebApi.dll
+C:\Users\43765601896\Downloads\Senai_Sprint_1_BD\SPMEDGROUP\Cândida\API\Senai.SpMedGroup.WebApi\Senai.SpMedGroup.WebApi\obj\Release\netcoreapp2.1\Senai.SpMedGroup.WebApi.pdb

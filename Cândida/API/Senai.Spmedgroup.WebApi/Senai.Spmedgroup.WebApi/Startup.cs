@@ -75,6 +75,9 @@ namespace Senai.SpMedGroup.WebApi
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "SpMedGroup");
             });
 
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
             app.UseMvc();
         }
     }

@@ -7,6 +7,6 @@
     "\\Senai.SpMedGroup.WebApi\\Domains",
     "\\Senai.SpMedGroup.WebApi\\Interfaces"
   ],
-  "SelectedNode": "\\Senai.SpMedGroup.WebApi\\Controllers\\MedicosController.cs",
+  "SelectedNode": "\\Senai.SpMedGroup.WebApi\\Interfaces\\IConsultaRepository.cs",
   "PreviewInSolutionExplorer": false
 }
