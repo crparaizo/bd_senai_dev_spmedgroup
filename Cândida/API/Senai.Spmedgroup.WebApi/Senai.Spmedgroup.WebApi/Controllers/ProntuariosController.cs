@@ -57,6 +57,7 @@ namespace Senai.SpMedGroup.WebApi.Controllers
         {
             try
             {
+                prontuario.Consultas = null;
                 ProntuarioRepository.Cadastrar(prontuario);
                 return Ok();
             }
