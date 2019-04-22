@@ -23,7 +23,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
         }
 
         /*
-        [Authorize]
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public IActionResult Get()
         {
@@ -40,6 +40,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             }
         }
         */
+        
 
         [Authorize(Roles = "Administrador")]
         [HttpGet("{id}")]
@@ -158,7 +159,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             try
             {
                 int IdUser = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
-                int IdTypeUser = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == ClaimTypes.Role).Value);
+                string IdTypeUser = HttpContext.User.Claims.First(c => c.Type == ClaimTypes.Role).Value;
 
                 return Ok(ConsultaRepository.Listar(IdUser, IdTypeUser));
             }

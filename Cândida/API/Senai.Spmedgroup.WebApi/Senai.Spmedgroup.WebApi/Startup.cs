@@ -53,6 +53,15 @@ namespace Senai.SpMedGroup.WebApi
                     ValidAudience = "SpMedGroup.Web.Api"
                 };
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,6 +83,8 @@ namespace Senai.SpMedGroup.WebApi
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "SpMedGroup");
             });
+
+            app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             app.UseDefaultFiles();
             app.UseStaticFiles();

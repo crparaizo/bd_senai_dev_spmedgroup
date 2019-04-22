@@ -52,23 +52,23 @@ namespace Senai.SpMedGroup.WebApi.Repositories
         }
         */
 
-        public List<Consultas> Listar(int IdUser, int IdUserType)
+        public List<Consultas> Listar(int IdUser, string IdUserType)
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext ())
             {
-                if (IdUserType == 1)
+                if (IdUserType == "Administrador")
                 {
                     return ctx.Consultas.ToList();
                 }
 
-                if (IdUserType == 3)
+                if (IdUserType == "Medico")
                 {
                     Medicos medico;
                     medico = ctx.Medicos.FirstOrDefault(x => x.IdUsuario == IdUser);
                     return ctx.Consultas.Where(x => x.IdMedico == medico.Id).ToList();
                 }
 
-                if (IdUserType == 2)
+                if (IdUserType == "Paciente")
                 {
                     Prontuarios prontuario;
                     prontuario = ctx.Prontuarios.Where(x => x.Id == IdUser).FirstOrDefault();
