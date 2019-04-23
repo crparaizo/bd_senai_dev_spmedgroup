@@ -1,4 +1,5 @@
-﻿using Senai.SpMedGroup.WebApi.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai.SpMedGroup.WebApi.Domains;
 using Senai.SpMedGroup.WebApi.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,21 +59,37 @@ namespace Senai.SpMedGroup.WebApi.Repositories
             {
                 if (IdUserType == "Administrador")
                 {
-                    return ctx.Consultas.ToList();
+                    return ctx.Consultas
+               
+                        .Include(x => x.IdProntuarioNavigation)
+                        .Include(x => x.IdProntuarioNavigation.IdUsuarioNavigation)
+                        .Include(x => x.IdMedicoNavigation)
+                        .Include(x => x.IdMedicoNavigation.IdUsuarioNavigation)
+                        .Include(x => x.IdMedicoNavigation.IdEspecialidadeNavigation)
+                        .ToList();                    
                 }
 
                 if (IdUserType == "Medico")
                 {
                     Medicos medico;
                     medico = ctx.Medicos.FirstOrDefault(x => x.IdUsuario == IdUser);
-                    return ctx.Consultas.Where(x => x.IdMedico == medico.Id).ToList();
+                    return ctx.Consultas
+                        .Include(x => x.IdProntuarioNavigation)
+                        .Include(x => x.IdProntuarioNavigation.IdUsuarioNavigation)
+                        .Include(x => x.IdMedicoNavigation.IdEspecialidadeNavigation)
+                        .ToList();
                 }
 
                 if (IdUserType == "Paciente")
                 {
                     Prontuarios prontuario;
                     prontuario = ctx.Prontuarios.Where(x => x.Id == IdUser).FirstOrDefault();
-                    return ctx.Consultas.Where(x => x.IdProntuario == prontuario.Id).ToList();
+                    return ctx.Consultas
+                        .Include(x => x.IdMedicoNavigation)
+                        .Include(x => x.IdMedicoNavigation.IdUsuarioNavigation)
+                        .Include(x => x.IdMedicoNavigation.IdEspecialidadeNavigation)
+                        .Where(x => x.IdProntuario == prontuario.Id)
+                        .ToList();
                 }
 
                 return null;
