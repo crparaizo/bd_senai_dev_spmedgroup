@@ -59,8 +59,7 @@ namespace Senai.SpMedGroup.WebApi.Repositories
             {
                 if (IdUserType == "Administrador")
                 {
-                    return ctx.Consultas
-               
+                    return ctx.Consultas               
                         .Include(x => x.IdProntuarioNavigation)
                         .Include(x => x.IdProntuarioNavigation.IdUsuarioNavigation)
                         .Include(x => x.IdMedicoNavigation)
@@ -76,7 +75,10 @@ namespace Senai.SpMedGroup.WebApi.Repositories
                     return ctx.Consultas
                         .Include(x => x.IdProntuarioNavigation)
                         .Include(x => x.IdProntuarioNavigation.IdUsuarioNavigation)
+                        .Include(x => x.IdMedicoNavigation)
+                        .Include(x => x.IdMedicoNavigation.IdUsuarioNavigation)
                         .Include(x => x.IdMedicoNavigation.IdEspecialidadeNavigation)
+                        .Where(x => x.IdMedico == medico.Id)
                         .ToList();
                 }
 
@@ -85,6 +87,8 @@ namespace Senai.SpMedGroup.WebApi.Repositories
                     Prontuarios prontuario;
                     prontuario = ctx.Prontuarios.Where(x => x.Id == IdUser).FirstOrDefault();
                     return ctx.Consultas
+                        .Include(x => x.IdProntuarioNavigation)
+                        .Include(x => x.IdProntuarioNavigation.IdUsuarioNavigation)
                         .Include(x => x.IdMedicoNavigation)
                         .Include(x => x.IdMedicoNavigation.IdUsuarioNavigation)
                         .Include(x => x.IdMedicoNavigation.IdEspecialidadeNavigation)
