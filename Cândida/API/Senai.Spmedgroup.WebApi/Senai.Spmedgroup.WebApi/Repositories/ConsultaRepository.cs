@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Senai.SpMedGroup.WebApi.Domains;
 using Senai.SpMedGroup.WebApi.Interfaces;
+using Senai.SpMedGroup.WebApi.ViewModel;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -65,6 +66,7 @@ namespace Senai.SpMedGroup.WebApi.Repositories
                         .Include(x => x.IdMedicoNavigation)
                         .Include(x => x.IdMedicoNavigation.IdUsuarioNavigation)
                         .Include(x => x.IdMedicoNavigation.IdEspecialidadeNavigation)
+                        .Include(x => x.IdSituacaoNavigation)
                         .ToList();                    
                 }
 
@@ -78,6 +80,7 @@ namespace Senai.SpMedGroup.WebApi.Repositories
                         .Include(x => x.IdMedicoNavigation)
                         .Include(x => x.IdMedicoNavigation.IdUsuarioNavigation)
                         .Include(x => x.IdMedicoNavigation.IdEspecialidadeNavigation)
+                        .Include(x => x.IdSituacaoNavigation)
                         .Where(x => x.IdMedico == medico.Id)
                         .ToList();
                 }
@@ -92,6 +95,7 @@ namespace Senai.SpMedGroup.WebApi.Repositories
                         .Include(x => x.IdMedicoNavigation)
                         .Include(x => x.IdMedicoNavigation.IdUsuarioNavigation)
                         .Include(x => x.IdMedicoNavigation.IdEspecialidadeNavigation)
+                        .Include(x => x.IdSituacaoNavigation)
                         .Where(x => x.IdProntuario == prontuario.Id)
                         .ToList();
                 }
@@ -114,6 +118,30 @@ namespace Senai.SpMedGroup.WebApi.Repositories
             {
                 return ctx.Consultas.Where(x => x.IdProntuario == id).ToList();
             }
+        }
+
+        public List<ConsultaViewModel> TransformaEmConsultasViewModel(List<Consultas> consultas)
+        {
+            List<ConsultaViewModel> consultasViewModel = new List<ConsultaViewModel>();
+
+            foreach (Consultas consulta in consultas)
+            {
+                ConsultaViewModel consultaViewModel = new ConsultaViewModel()
+                {
+                    ID = consulta.Id,
+                    NomePaciente = consulta.IdProntuarioNavigation.IdUsuarioNavigation.Nome,
+                    EmailPaciente = consulta.IdProntuarioNavigation.IdUsuarioNavigation.Email,
+                    NomeMedico = consulta.IdMedicoNavigation.IdUsuarioNavigation.Nome,
+                    EmailMedico = consulta.IdMedicoNavigation.IdUsuarioNavigation.Email,
+                    Especialidade = consulta.IdMedicoNavigation.IdEspecialidadeNavigation.Nome,
+                    Descricao = consulta.Descricao,
+                    DataConsulta = consulta.DataHoraConsulta.ToString(),
+                    Situacao = consulta.IdSituacaoNavigation.Nome
+                };
+
+                consultasViewModel.Add(consultaViewModel);
+            }
+            return consultasViewModel;
         }
     }
 }
