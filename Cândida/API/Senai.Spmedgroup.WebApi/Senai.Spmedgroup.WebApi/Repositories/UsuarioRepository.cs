@@ -59,7 +59,9 @@ namespace Senai.SpMedGroup.WebApi.Repositories
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                return ctx.Usuarios.ToList();
+                return ctx.Usuarios
+                    .Include(x => x.IdTipoUsuarioNavigation)
+                    .ToList();
             }
         }
     }
