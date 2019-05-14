@@ -60,21 +60,29 @@ namespace Senai.SpMedGroup.WebApi.Repositories
             {
                 if (IdUserType == "Administrador")
                 {
-                    return ctx.Consultas               
+                    // return ctx.Consultas               
+                    List<Consultas> listaConsulta = ctx.Consultas
                         .Include(x => x.IdProntuarioNavigation)
                         .Include(x => x.IdProntuarioNavigation.IdUsuarioNavigation)
                         .Include(x => x.IdMedicoNavigation)
                         .Include(x => x.IdMedicoNavigation.IdUsuarioNavigation)
                         .Include(x => x.IdMedicoNavigation.IdEspecialidadeNavigation)
                         .Include(x => x.IdSituacaoNavigation)
-                        .ToList();                    
+                        .ToList();
+                    foreach (var item in listaConsulta)
+                    {
+                        item.IdProntuarioNavigation.Consultas = null;
+                        item.IdMedicoNavigation.Consultas = null;
+                        item.IdSituacaoNavigation.Consultas = null;
+                    }
+                    return listaConsulta;
                 }
 
                 if (IdUserType == "Medico")
                 {
-                    Medicos medico;
-                    medico = ctx.Medicos.FirstOrDefault(x => x.IdUsuario == IdUser);
-                    return ctx.Consultas
+                    Medicos medico = ctx.Medicos.FirstOrDefault(x => x.IdUsuario == IdUser);
+                    List<Consultas> listaConsulta = ctx.Consultas
+
                         .Include(x => x.IdProntuarioNavigation)
                         .Include(x => x.IdProntuarioNavigation.IdUsuarioNavigation)
                         .Include(x => x.IdMedicoNavigation)
@@ -83,13 +91,22 @@ namespace Senai.SpMedGroup.WebApi.Repositories
                         .Include(x => x.IdSituacaoNavigation)
                         .Where(x => x.IdMedico == medico.Id)
                         .ToList();
+
+                    //Usar framework DAPPER                    
+
+                    foreach (var item in listaConsulta)
+                    {
+                        item.IdProntuarioNavigation.Consultas = null;
+                        item.IdMedicoNavigation.Consultas = null;
+                        item.IdSituacaoNavigation.Consultas = null;
+                    }
+                    return  listaConsulta;
                 }
 
                 if (IdUserType == "Paciente")
                 {
-                    Prontuarios prontuario;
-                    prontuario = ctx.Prontuarios.Where(x => x.Id == IdUser).FirstOrDefault();
-                    return ctx.Consultas
+                    Prontuarios prontuario = ctx.Prontuarios.Where(x => x.Id == IdUser).FirstOrDefault();
+                    List<Consultas> listaConsulta = ctx.Consultas
                         .Include(x => x.IdProntuarioNavigation)
                         .Include(x => x.IdProntuarioNavigation.IdUsuarioNavigation)
                         .Include(x => x.IdMedicoNavigation)
@@ -98,6 +115,14 @@ namespace Senai.SpMedGroup.WebApi.Repositories
                         .Include(x => x.IdSituacaoNavigation)
                         .Where(x => x.IdProntuario == prontuario.Id)
                         .ToList();
+
+                    foreach (var item in listaConsulta)
+                    {
+                        item.IdProntuarioNavigation.Consultas = null;
+                        item.IdMedicoNavigation.Consultas = null;
+                        item.IdSituacaoNavigation.Consultas = null;
+                    }
+                    return listaConsulta;
                 }
 
                 return null;

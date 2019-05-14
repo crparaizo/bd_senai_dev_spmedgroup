@@ -161,7 +161,11 @@ namespace Senai.Spmedgroup.WebApi.Controllers
                 int IdUser = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
                 string IdTypeUser = HttpContext.User.Claims.First(c => c.Type == ClaimTypes.Role).Value;
 
-                return Ok(ConsultaRepository.Listar(IdUser, IdTypeUser));
+                var listaConsultas = ConsultaRepository.Listar(IdUser, IdTypeUser);
+
+
+
+                return Ok(listaConsultas);
             }
             catch (Exception ex)
             {
