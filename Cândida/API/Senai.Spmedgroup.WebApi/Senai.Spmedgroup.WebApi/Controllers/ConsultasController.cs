@@ -162,9 +162,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
                 string IdTypeUser = HttpContext.User.Claims.First(c => c.Type == ClaimTypes.Role).Value;
 
                 var listaConsultas = ConsultaRepository.Listar(IdUser, IdTypeUser);
-
-
-
+                               
                 return Ok(listaConsultas);
             }
             catch (Exception ex)

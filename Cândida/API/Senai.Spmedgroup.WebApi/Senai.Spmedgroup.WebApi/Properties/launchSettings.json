@@ -3,7 +3,7 @@
     "windowsAuthentication": false, 
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:62461",
+      "applicationUrl": "http://192.168.3.151:62461",
       "sslPort": 0
     }
   },
@@ -18,7 +18,7 @@
     "Senai.SpMedGroup.WebApi": {
       "commandName": "Project",
       "launchBrowser": false, //Browser não irá mais aparecer na abertura da API
-      "applicationUrl": "http://localhost:5000", //Colocar IP serve para rodar em outros PCs
+      "applicationUrl": "http://192.168.3.151:5000", //Colocar IP serve para rodar em outros PCs  192.168.3.151
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
