@@ -29,7 +29,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             {
                 using (SpMedGroupContext ctx = new SpMedGroupContext())
                 {
-                    return Ok(ctx.Medicos.ToList());
+                    return Ok(MedicoRepository.Listar());
                 }
             }
             catch (Exception ex)

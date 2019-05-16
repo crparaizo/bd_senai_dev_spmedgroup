@@ -28,7 +28,7 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             {
                 using (SpMedGroupContext ctx = new SpMedGroupContext())
                 {
-                    return Ok(ctx.Usuarios.ToList());
+                    return Ok(UsuarioRepository.Listar());
                 }
             }
             catch (Exception ex)

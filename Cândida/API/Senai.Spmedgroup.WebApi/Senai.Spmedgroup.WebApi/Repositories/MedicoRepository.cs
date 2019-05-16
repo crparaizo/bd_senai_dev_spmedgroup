@@ -1,4 +1,5 @@
-﻿using Senai.SpMedGroup.WebApi.Domains;
+﻿using Microsoft.EntityFrameworkCore;
+using Senai.SpMedGroup.WebApi.Domains;
 using Senai.SpMedGroup.WebApi.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +47,18 @@ namespace Senai.SpMedGroup.WebApi.Repositories
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                return ctx.Medicos.ToList();
+                List<Medicos> listaMedicos = ctx.Medicos
+                        .Include(x => x.IdUsuarioNavigation)
+                        .Include(x => x.IdEspecialidadeNavigation)
+                        .Include(x => x.IdClinicaNavigation)
+                        .ToList();
+                foreach (var item in listaMedicos)
+                {
+                    item.IdUsuarioNavigation.Medicos = null;
+                    item.IdEspecialidadeNavigation.Medicos = null;
+                    item.IdClinicaNavigation.Medicos = null;
+                }
+                return listaMedicos;
             }
         }
     }
