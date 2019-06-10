@@ -128,10 +128,11 @@ namespace Senai.Spmedgroup.WebApi.Controllers
             }
         }
 
+
         [Authorize(Roles = "Administrador")]
-        [HttpPut]
+        [HttpPut] //Colocar Patch para alterar somente um elemento
         [Route("excluir")]
-        public IActionResult Excluir(Consultas consulta)
+        public IActionResult ExcluirAlteracao(Consultas consulta) //Método de alterar o estado de visibilidade da consultas
         {
             try
             {
@@ -142,7 +143,30 @@ namespace Senai.Spmedgroup.WebApi.Controllers
                     return NotFound();
                 }
 
-                ConsultaRepository.Excluir(consulta);
+                ConsultaRepository.ExcluirAlteracao(consulta);
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { mensagem = ex.Message + "ERROOO" });
+            }
+        }
+
+        [Authorize(Roles = "Administrador")]
+        [HttpDelete("{id}")]
+        public IActionResult ExcluirDefinitivamente(int id)  //Método de exluir definitivamente os elementos
+        {
+            try
+            {
+                Consultas consultaProcurada = ConsultaRepository.BuscarPorId(id);
+
+                if (consultaProcurada == null)
+                {
+                    return NotFound();
+                }
+
+                ConsultaRepository.ExcluirDefinitivamente(consultaProcurada);
 
                 return Ok();
             }

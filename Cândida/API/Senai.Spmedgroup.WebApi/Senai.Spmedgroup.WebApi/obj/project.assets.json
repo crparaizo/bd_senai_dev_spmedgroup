@@ -12821,11 +12821,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\43765601896\\Downloads\\Senai_Sprint_1_BD\\SPMEDGROUP\\Cândida\\API\\Senai.Spmedgroup.WebApi\\Senai.SpMedGroup.WebApi\\Senai.SpMedGroup.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\43765601896\\Downloads\\Senai_Sprint_1_BD\\SPMEDGROUP\\Cândida\\API\\Senai.SpMedGroup.WebApi\\Senai.SpMedGroup.WebApi\\Senai.SpMedGroup.WebApi.csproj",
       "projectName": "Senai.SpMedGroup.WebApi",
-      "projectPath": "C:\\Users\\43765601896\\Downloads\\Senai_Sprint_1_BD\\SPMEDGROUP\\Cândida\\API\\Senai.Spmedgroup.WebApi\\Senai.SpMedGroup.WebApi\\Senai.SpMedGroup.WebApi.csproj",
+      "projectPath": "C:\\Users\\43765601896\\Downloads\\Senai_Sprint_1_BD\\SPMEDGROUP\\Cândida\\API\\Senai.SpMedGroup.WebApi\\Senai.SpMedGroup.WebApi\\Senai.SpMedGroup.WebApi.csproj",
       "packagesPath": "C:\\Users\\43765601896\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\43765601896\\Downloads\\Senai_Sprint_1_BD\\SPMEDGROUP\\Cândida\\API\\Senai.Spmedgroup.WebApi\\Senai.SpMedGroup.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\43765601896\\Downloads\\Senai_Sprint_1_BD\\SPMEDGROUP\\Cândida\\API\\Senai.SpMedGroup.WebApi\\Senai.SpMedGroup.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

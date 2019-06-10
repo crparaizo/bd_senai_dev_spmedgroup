@@ -17,7 +17,9 @@ namespace Senai.SpMedGroup.WebApi.Interfaces
 
         void Cadastrar(Consultas consulta);
 
-        void Excluir(Consultas consulta);
+        void ExcluirAlteracao(Consultas consulta);
+
+        void ExcluirDefinitivamente(Consultas consulta);
 
         //List<Consultas> ListarConsultasEspecificas(int IdUser, int IdUserType);
     }

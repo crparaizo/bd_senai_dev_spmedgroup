@@ -35,11 +35,20 @@ namespace Senai.SpMedGroup.WebApi.Repositories
             }
         }
 
-        public void Excluir(Consultas consulta)
+        public void ExcluirAlteracao(Consultas consulta)
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
                 ctx.Consultas.Update(consulta);
+                ctx.SaveChanges();
+            }
+        }
+
+        public void ExcluirDefinitivamente(Consultas consulta)
+        {
+            using (SpMedGroupContext ctx = new SpMedGroupContext())
+            {
+                ctx.Consultas.Remove(consulta);
                 ctx.SaveChanges();
             }
         }
